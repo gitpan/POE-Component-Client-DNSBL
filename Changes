@@ -1,0 +1,5 @@
+POE::Component::Client::DNSBL Changelog
+=======================================
+
+0.01	Tue Sep  4 17:23:24 BST 2007
+	- Initial CPAN Release
