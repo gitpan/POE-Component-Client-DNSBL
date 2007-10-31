@@ -5,7 +5,7 @@ use Net::IP qw(ip_is_ipv4);
 use POE qw(Component::Client::DNS);
 use vars qw($VERSION);
 
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 sub spawn {
   my $package = shift;
