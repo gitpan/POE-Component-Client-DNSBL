@@ -1,6 +1,9 @@
 POE::Component::Client::DNSBL Changelog
 =======================================
 
+0.04	Tue Feb 19 20:28:56 GMT 2008
+	- Added 'dnsbl' option to lookup().
+
 0.02	Wed Oct 31 13:16:00 GMT 2007
 	- Updated Module::Install to 0.68
 

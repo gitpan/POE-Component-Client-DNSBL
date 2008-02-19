@@ -5,7 +5,7 @@ use Net::IP qw(ip_is_ipv4);
 use POE qw(Component::Client::DNS);
 use vars qw($VERSION);
 
-$VERSION = '0.02';
+$VERSION = '0.04';
 
 sub spawn {
   my $package = shift;
@@ -97,11 +97,12 @@ sub _resolve {
 	return;
     }
   }
+  $args->{dnsbl} ||= $self->{dnsbl};
   $args->{sender} = $sender_id;
   $kernel->refcount_increment( $sender_id, __PACKAGE__ );
   my $response = $self->{resolver}->resolve(
     event => '_lookup',
-    host  => join( '.', ( reverse split /\./, $args->{address} ), $self->{dnsbl} ),
+    host  => join( '.', ( reverse split /\./, $args->{address} ), $args->{dnsbl} ),
     type  => 'A',
     context => $args,
   );
@@ -292,6 +293,7 @@ Performs a DNSBL lookup. Takes a number of parameters:
   'event', the name of the event to send the reply to. ( Mandatory );
   'address', the IPv4 address to lookup ( Mandatory );
   'session', send the resultant event to an alternative session, ( default is the sender );
+  'dnsbl', optionally override the configured DNSBL for this particular lookup;
 
 You may also pass arbitary key/values. Arbitary keys should have an underscore prefix '_'.
 
@@ -304,6 +306,7 @@ The component will send an event in response to C<lookup> requests. ARG0 will be
   'response', the status returned by the DNSBL, it will be NXDOMAIN if the address given was okay;
   'reason', if an address is blacklisted, this may contain the reason;
   'error', if something goes wrong with the DNS lookup the error string will be contained here;
+  'dnsbl', the DNSBL that was used for this request;
 
 =head1 AUTHOR
 
