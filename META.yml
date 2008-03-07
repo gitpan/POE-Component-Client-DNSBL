@@ -19,4 +19,4 @@ requires:
   Net::IP: 0
   POE: 0.38
   POE::Component::Client::DNS: 1
-version: 0.04
+version: 0.06

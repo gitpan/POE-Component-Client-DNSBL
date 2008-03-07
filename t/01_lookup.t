@@ -1,9 +1,9 @@
 use strict;
-use Test::More tests => 3;
+use Test::More tests => 6;
 use POE qw(Component::Client::DNSBL);
 use Data::Dumper;
 
-my @addresses = qw(100.0.0.1);
+my @addresses = qw(100.0.0.1 100.1.0.45 100.255.0.56 100.2.3.4);
 
 my $dnsbl = POE::Component::Client::DNSBL->spawn();
 

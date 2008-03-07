@@ -1,6 +1,10 @@
 POE::Component::Client::DNSBL Changelog
 =======================================
 
+0.06	Fri Mar  7 06:16:02 GMT 2008
+	- Added 'use warnings'. Only shutdown the resolver if it is 
+	  ours. Added more IPs to the 01_lookup test.
+
 0.04	Tue Feb 19 20:28:56 GMT 2008
 	- Added 'dnsbl' option to lookup().
 

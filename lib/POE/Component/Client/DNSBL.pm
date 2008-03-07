@@ -1,11 +1,12 @@
 package POE::Component::Client::DNSBL;
 
 use strict;
+use warnings;
 use Net::IP qw(ip_is_ipv4);
 use POE qw(Component::Client::DNS);
 use vars qw($VERSION);
 
-$VERSION = '0.04';
+$VERSION = '0.06';
 
 sub spawn {
   my $package = shift;
@@ -52,6 +53,7 @@ sub _start {
      $self->{resolver} = POE::Component::Client::DNS->spawn(
 	Alias => __PACKAGE__ . $self->{session_id},
      );
+     $self->{_mydns} = 1;
   }
   return;
 }
@@ -61,7 +63,8 @@ sub _shutdown {
   $kernel->alarm_remove_all();
   $kernel->alias_remove( $_ ) for $kernel->alias_list();
   $kernel->refcount_decrement( $self->{session_id} => __PACKAGE__ ) unless $self->{alias};
-  $self->{resolver}->shutdown();
+  $self->{resolver}->shutdown() if $self->{_mydns};
+  delete $self->{resolver};
   return;
 }
 
