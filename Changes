@@ -1,6 +1,9 @@
 POE::Component::Client::DNSBL Changelog
 =======================================
 
+0.08	Sat May 17 13:44:49 BST 2008
+	- Removed kwalitee test and added LICENSE information.
+
 0.06	Fri Mar  7 06:16:02 GMT 2008
 	- Added 'use warnings'. Only shutdown the resolver if it is 
 	  ours. Added more IPs to the 01_lookup test.

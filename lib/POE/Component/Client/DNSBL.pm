@@ -6,7 +6,7 @@ use Net::IP qw(ip_is_ipv4);
 use POE qw(Component::Client::DNS);
 use vars qw($VERSION);
 
-$VERSION = '0.06';
+$VERSION = '0.08';
 
 sub spawn {
   my $package = shift;
@@ -314,6 +314,12 @@ The component will send an event in response to C<lookup> requests. ARG0 will be
 =head1 AUTHOR
 
 Chris C<BinGOs> Williams <chris@bingosnet.co.uk>
+
+=head1 LICENSE
+
+Copyright C<(c)> Chris Williamss.
+
+This module may be used, modified, and distributed under the same terms as Perl itself. Please see the license that came with your Perl distribution for details.
 
 =head1 SEE ALSO
 

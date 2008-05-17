@@ -1,9 +1,11 @@
+use strict;
 use inc::Module::Install;
 name 'POE-Component-Client-DNSBL';
 license 'perl';
 author 'Chris Williams <chris@bingosnet.co.uk>';
 version_from 'lib/POE/Component/Client/DNSBL.pm';
 abstract_from 'lib/POE/Component/Client/DNSBL.pm';
+perl_version '5.000';
 build_requires 'Test::More' => 0.47;
 requires 'warnings::compat' => 0 if $] < 5.006;
 requires 'Net::IP' => 0;
