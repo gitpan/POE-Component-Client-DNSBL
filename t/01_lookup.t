@@ -40,6 +40,6 @@ sub _stop {
 
 sub _response {
    my ($kernel,$heap,$record) = @_[KERNEL,HEAP,ARG0];
-   ok( $record->{response} eq 'NXDOMAIN', 'NXDOMAIN' ) or diag("Was expecting 'NXDOMAIN', got " . $record->{response} . "\n");
+   ok( $record->{response} eq 'NXDOMAIN', 'NXDOMAIN' ) or diag("Was expecting 'NXDOMAIN', got " . Dumper( $record ) . "\n");
    return;
 }
