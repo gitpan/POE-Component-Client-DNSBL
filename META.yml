@@ -9,7 +9,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: 'Module::Install version 0.88'
+generated_by: 'Module::Install version 1.01'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -23,7 +23,7 @@ no_index:
 provides:
   POE::Component::Client::DNSBL:
     file: lib/POE/Component/Client/DNSBL.pm
-    version: 1.02
+    version: 1.04
 requires:
   Net::IP: 0
   POE: 1.004
@@ -33,4 +33,4 @@ resources:
   homepage: http://github.com/bingos/poe-component-client-dnsbl/tree
   license: http://dev.perl.org/licenses/
   repository: git://github.com/bingos/poe-component-client-dnsbl.git
-version: 1.02
+version: 1.04
