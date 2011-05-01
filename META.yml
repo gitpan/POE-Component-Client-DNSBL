@@ -23,7 +23,7 @@ no_index:
 provides:
   POE::Component::Client::DNSBL:
     file: lib/POE/Component/Client/DNSBL.pm
-    version: 1.04
+    version: 1.06
 requires:
   Net::IP: 0
   POE: 1.004
@@ -33,4 +33,4 @@ resources:
   homepage: http://github.com/bingos/poe-component-client-dnsbl/tree
   license: http://dev.perl.org/licenses/
   repository: git://github.com/bingos/poe-component-client-dnsbl.git
-version: 1.04
+version: 1.06
