@@ -1,12 +1,14 @@
 package POE::Component::Client::DNSBL;
+{
+  $POE::Component::Client::DNSBL::VERSION = '1.08';
+}
+
+#ABSTRACT: A component that provides non-blocking DNSBL lookups
 
 use strict;
 use warnings;
-use Net::IP qw(ip_is_ipv4 ip_get_version);
+use Net::IP::Minimal qw(ip_is_ipv4 ip_get_version);
 use POE qw(Component::Client::DNS);
-use vars qw($VERSION);
-
-$VERSION = '1.06';
 
 sub spawn {
   my $package = shift;
@@ -192,11 +194,18 @@ sub _reason {
 }
 
 1;
+
+
 __END__
+=pod
 
 =head1 NAME
 
 POE::Component::Client::DNSBL - A component that provides non-blocking DNSBL lookups
+
+=head1 VERSION
+
+version 1.08
 
 =head1 SYNOPSIS
 
@@ -359,4 +368,16 @@ L<POE::Session>
 
 L<POE::Component::Client::DNS>
 
+=head1 AUTHOR
+
+Chris Williams <chris@bingosnet.co.uk>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2011 by Chris Williams.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut
+

@@ -4,33 +4,22 @@ author:
   - 'Chris Williams <chris@bingosnet.co.uk>'
 build_requires:
   Data::Dumper: 0.47
-  ExtUtils::MakeMaker: 6.42
   Test::More: 0.47
 configure_requires:
-  ExtUtils::MakeMaker: 6.42
-distribution_type: module
-generated_by: 'Module::Install version 1.01'
+  ExtUtils::MakeMaker: 6.30
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.300003, CPAN::Meta::Converter version 2.112621'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: POE-Component-Client-DNSBL
-no_index:
-  directory:
-    - examples
-    - inc
-    - t
-provides:
-  POE::Component::Client::DNSBL:
-    file: lib/POE/Component/Client/DNSBL.pm
-    version: 1.06
 requires:
-  Net::IP: 0
+  Net::IP::Minimal: 0
   POE: 1.004
   POE::Component::Client::DNS: 1
-  perl: 5.6.0
+  perl: 5.006
 resources:
-  homepage: http://github.com/bingos/poe-component-client-dnsbl/tree
-  license: http://dev.perl.org/licenses/
-  repository: git://github.com/bingos/poe-component-client-dnsbl.git
-version: 1.06
+  homepage: https://github.com/bingos/poe-component-client-dnsbl
+  repository: https://github.com/bingos/poe-component-client-dnsbl.git
+version: 1.08
